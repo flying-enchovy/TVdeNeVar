@@ -1,0 +1,36 @@
+    def __init__(self, **kwargs):
+        super(Kategoriler_Grid, self).__init__(**kwargs)
+        self.rows = 6
+        self.cols = 1
+        self.add_widget(Label(text="Program Ara: "))
+
+        self.search = TextInput(multiline=False, font_size=30)
+        self.add_widget(self.search)
+
+        self.filmler_button = Button(text="Filmler", font_size=40, bold=True)
+        self.filmler_button.bind(on_press=self.pressed_filmler)
+        self.add_widget(self.filmler_button)
+
+        self.diziler_button = Button(text="Diziler", font_size=40, bold=True)
+        self.diziler_button.bind(on_press=self.pressed_diziler)
+        self.add_widget(self.diziler_button)
+
+        self.yarismalar_button = Button(text="Yarışmalar", font_size=40, bold=True)
+        self.yarismalar_button.bind(on_press=self.pressed_yarismalar)
+        self.add_widget(self.yarismalar_button)
+
+        self.belgeseller_button = Button(text="Belgeseller", font_size=40, bold=True)
+        self.belgeseller_button.bind(on_press=self.pressed_belgeseller)
+        self.add_widget(self.belgeseller_button)
+
+    def pressed_filmler(self, instance):
+        return Filmler()
+
+    def pressed_diziler(self, instance):
+        print("d")
+
+    def pressed_yarismalar(self, instance):
+        print("y")
+
+    def pressed_belgeseller(self, instance):
+        print("b")
